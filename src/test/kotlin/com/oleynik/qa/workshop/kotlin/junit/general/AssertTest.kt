@@ -14,19 +14,17 @@ import org.junit.jupiter.api.Test
 class AssertTest {
 
     @Test
-    fun assert_equals_multiplication_test() {
-        println("Multiplication test")
+    fun `assertEquals verifies multiplication result`() {
         assertEquals(10, 2 * 5, "Multiplication result is wrong")
     }
 
     @Test
-    fun assert_equals_division_test() {
-        println("Division test")
+    fun `assertEquals verifies division result within delta`() {
         assertEquals(1.9, 10 / 5.0, 0.2)
     }
 
     @Test
-    fun assert_boolean_test() {
+    fun `assertTrue and assertFalse verify boolean conditions`() {
         val variable = true
 
         assertTrue(variable, "variable is not true")
@@ -34,7 +32,7 @@ class AssertTest {
     }
 
     @Test
-    fun fail_test() {
+    fun `fail explicitly marks a test as failed`() {
         val isFailed = false
 
         if (isFailed) {
@@ -43,21 +41,21 @@ class AssertTest {
     }
 
     @Test
-    fun assert_null_test() {
+    fun `assertNull verifies that value is null`() {
         val myObject: Any? = null
 
         assertNull(myObject, "My object is not null")
     }
 
     @Test
-    fun assert_not_null_test() {
+    fun `assertNotNull verifies that value is not null`() {
         val myObject = Any()
 
         assertNotNull(myObject, "My object is null")
     }
 
     @Test
-    fun assert_same_test() {
+    fun `assertSame verifies that references point to the same object`() {
         val user1 = User(
             surname = "Crocodilovich",
             name = "Crocodil",
@@ -68,7 +66,7 @@ class AssertTest {
     }
 
     @Test
-    fun assert_not_the_same_test() {
+    fun `assertNotSame verifies that references point to different objects`() {
         val user1 = User(
             surname = "Crocodilovich",
             name = "Crocodil",
