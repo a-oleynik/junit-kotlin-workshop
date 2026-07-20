@@ -12,9 +12,8 @@ A practical workshop with runnable examples of JUnit 6 features in Kotlin/JVM.
 
 > **Related projects:**
 >
-> - [JUnit Workshop](https://github.com/a-oleynik/junit-workshop) — comprehensive JUnit examples in Java
-> - [TestNG Workshop](https://github.com/a-oleynik/testng-workshop) — companion TestNG examples for side-by-side comparison
-> - [Selenium Example (JUnit 6 branch)](https://github.com/a-oleynik/selenium-example/tree/junit6) — a real-world Selenium WebDriver framework built on JUnit 6
+> - [JUnit Workshop](https://github.com/a-oleynik/junit-workshop) — the complete Java counterpart of this Kotlin workshop
+> - [Selenium Example (JUnit 6 branch)](https://github.com/a-oleynik/selenium-example/tree/junit6) — a real-world Java Selenium WebDriver framework built on JUnit 6
 
 **⭐ Found it useful?** If this project helps you, please give it a star — it helps others discover the repository.
 
