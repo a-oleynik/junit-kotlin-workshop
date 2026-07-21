@@ -4,7 +4,7 @@
 
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.4.0-7F52FF.svg)](https://kotlinlang.org/)
 [![Java](https://img.shields.io/badge/Java-21-orange.svg)](https://www.oracle.com/java/)
-[![Gradle](https://img.shields.io/badge/Gradle-Kotlin_DSL-02303A.svg)](https://gradle.org/)
+[![Gradle](https://img.shields.io/badge/Gradle-9.6.0-02303A.svg)](https://gradle.org/)
 [![JUnit](https://img.shields.io/badge/JUnit-6.1.2-green.svg)](https://junit.org/)
 [![License](https://img.shields.io/badge/License-Apache_2.0-lightgrey.svg)](LICENSE)
 
@@ -23,6 +23,7 @@ A practical workshop with runnable examples of JUnit 6 features in Kotlin/JVM.
 ## Table of contents
 
 - [Who is this for?](#who-is-this-for)
+- [Quick start](#quick-start)
 - [Prerequisites](#prerequisites)
 - [Versions](#versions)
 - [Available examples](#available-examples)
@@ -46,13 +47,36 @@ A practical workshop with runnable examples of JUnit 6 features in Kotlin/JVM.
 
 [Back to top](#top)
 
+## Quick start
+
+```bash
+git clone https://github.com/a-oleynik/junit-kotlin-workshop.git
+cd junit-kotlin-workshop
+```
+
+Run the tests on Linux, macOS, or Git Bash:
+
+```bash
+./gradlew clean test
+```
+
+Run the tests on Windows Command Prompt or PowerShell:
+
+```powershell
+gradlew.bat clean test
+```
+
+The Gradle Wrapper downloads and uses the required Gradle version automatically.
+
+[Back to top](#top)
+
 ## Prerequisites
 
-| Tool   |           Version | Notes                                     |
-|--------|------------------:|-------------------------------------------|
-| JDK    |                21 | Used by the Kotlin JVM toolchain          |
-| Gradle | Locally installed | The Gradle Wrapper has not been added yet |
-| IDE    |               Any | IntelliJ IDEA is recommended              |
+| Tool   | Version | Notes                                       |
+|--------|--------:|---------------------------------------------|
+| JDK    |      21 | Used by the Kotlin JVM toolchain            |
+| Gradle |   9.6.0 | Provided by the included Gradle Wrapper     |
+| IDE    |     Any | IntelliJ IDEA is recommended                |
 
 [Back to top](#top)
 
@@ -63,6 +87,7 @@ A practical workshop with runnable examples of JUnit 6 features in Kotlin/JVM.
 | Kotlin         | `2.4.0` |
 | JUnit          | `6.1.2` |
 | Java toolchain |    `21` |
+| Gradle Wrapper | `9.6.0` |
 
 [Back to top](#top)
 
@@ -92,48 +117,48 @@ The examples can be explored in this order:
 
 ## Command examples
 
-The commands below use a locally installed Gradle because the project does not contain the Gradle Wrapper yet.
+The examples below use the Gradle Wrapper. On Windows Command Prompt or PowerShell, replace `./gradlew` with `gradlew.bat`.
 
 ### Run all tests
 
 ```bash
-gradle clean test
+./gradlew clean test
 ```
 
 ### Run a single test class
 
 ```bash
-gradle test --tests "*AssertTest"
+./gradlew test --tests "*AssertTest"
 ```
 
 ### Run a single test method
 
 ```bash
-gradle test --tests "*AssertTest.assertEquals verifies multiplication result"
+./gradlew test --tests "*AssertTest.assertEquals verifies multiplication result"
 ```
 
 ### Run multiple test classes
 
 ```bash
-gradle test --tests "*AssertTest" --tests "*ExceptionTest"
+./gradlew test --tests "*AssertTest" --tests "*ExceptionTest"
 ```
 
 ### Compile and run all verification tasks
 
 ```bash
-gradle clean build
+./gradlew clean build
 ```
 
 ### Build without running tests
 
 ```bash
-gradle build -x test
+./gradlew build -x test
 ```
 
 ### Run tests with additional diagnostic output
 
 ```bash
-gradle test --info
+./gradlew test --info
 ```
 
 [Back to top](#top)
@@ -151,12 +176,21 @@ build/reports/tests/test/index.html
 ## Project structure
 
 ```text
-src/
-├── main/kotlin/com/oleynik/qa/workshop/kotlin/junit/
-│   ├── model/       # Example production models
-│   └── Utils.kt     # Utility used by timeout examples
-└── test/kotlin/com/oleynik/qa/workshop/kotlin/junit/
-    └── general/     # Assertions, fixtures, exceptions, disabled tests, and timeouts
+.
+├── gradle/wrapper/
+│   ├── gradle-wrapper.jar
+│   └── gradle-wrapper.properties
+├── src/
+│   ├── main/kotlin/com/oleynik/qa/workshop/kotlin/junit/
+│   │   ├── model/       # Example production models
+│   │   └── Utils.kt     # Utility used by timeout examples
+│   └── test/kotlin/com/oleynik/qa/workshop/kotlin/junit/
+│       └── general/     # Assertions, fixtures, exceptions, disabled tests, and timeouts
+├── build.gradle.kts
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+└── settings.gradle.kts
 ```
 
 [Back to top](#top)
@@ -170,6 +204,7 @@ src/
 - [JUnit 6 User Guide](https://docs.junit.org/6.1.2/)
 - [Kotlin documentation](https://kotlinlang.org/docs/home.html)
 - [Gradle User Manual](https://docs.gradle.org/current/userguide/userguide.html)
+- [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html)
 - [Gradle Kotlin DSL Primer](https://docs.gradle.org/current/userguide/kotlin_dsl.html)
 - [Testing JVM projects with Gradle](https://docs.gradle.org/current/userguide/java_testing.html)
 
